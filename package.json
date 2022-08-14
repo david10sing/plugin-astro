@@ -25,6 +25,8 @@
     "build": "rimraf ./dist && yarn build:cjs && yarn build:esm",
     "build:cjs": "tsc -p ./tsconfig.cjs.json ",
     "build:esm": "tsc -p ./tsconfig.esm.json ",
+		"lint": "yarn lint:tsc",
+		"lint:tsc": "tsc -p ./tsconfig.tests.json",
 		"prepare": "if [ -d .git ]; then git config core.hooksPath .hooks; fi",
 		"test": "NODE_OPTIONS=\"-r ts-node/register\" TS_NODE_TRANSPILE_ONLY=true TS_NODE_PROJECT=\"./tsconfig.tests.json\" node --test ./src/__tests__/*.ts"
   },

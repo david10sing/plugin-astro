@@ -9,4 +9,5 @@ tsconfig.cjs.tsbuildinfo
 tsconfig.esm.json
 tsconfig.esm.tsbuildinfo
 tsconfig.tests.json
+tsconfig.tests.tsbuildinfo
 yarn.lock
