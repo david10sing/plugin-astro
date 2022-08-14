@@ -1,0 +1,12 @@
+.hooks/
+node_modules/
+src/
+.editorconfig
+.npmignore
+tsconfig.base.json
+tsconfig.cjs.json
+tsconfig.cjs.tsbuildinfo
+tsconfig.esm.json
+tsconfig.esm.tsbuildinfo
+tsconfig.tests.json
+yarn.lock
