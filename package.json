@@ -3,7 +3,11 @@
   "description": "An Astro integration for Lyra",
   "version": "0.0.1",
   "keywords": [
-    "lyra"
+    "astro",
+    "astro-component",
+    "cms",
+    "lyra",
+    "search"
   ],
   "repository": "git@github.com:nearform/lyra-astro.git",
   "author": {
@@ -13,30 +17,36 @@
   },
   "license": "Apache-2.0",
   "private": false,
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.mjs",
   "types": "./dist/esm/index.d.ts",
   "exports": {
-    "import": "./dist/esm/index.js",
-    "require": "./dist/cjs/index.js",
-    "node": "./dist/cjs/index.js"
+    "import": "./dist/esm/index.mjs",
+    "require": "./dist/cjs/index.cjs",
+    "node": "./dist/cjs/index.cjs"
   },
   "scripts": {
     "build": "rimraf ./dist && yarn build:cjs && yarn build:esm",
-    "build:cjs": "tsc -p ./tsconfig.cjs.json ",
-    "build:esm": "tsc -p ./tsconfig.esm.json ",
-		"lint": "yarn lint:tsc",
-		"lint:tsc": "tsc -p ./tsconfig.tests.json",
-		"prepare": "if [ -d .git ]; then git config core.hooksPath .hooks; fi",
-		"test": "NODE_OPTIONS=\"-r ts-node/register\" TS_NODE_TRANSPILE_ONLY=true TS_NODE_PROJECT=\"./tsconfig.tests.json\" node --test ./src/__tests__/*.ts"
+    "build:cjs": "./scripts/build_cjs.sh",
+    "build:esm": "./scripts/build_esm.sh",
+    "lint": "yarn lint:tsc",
+    "lint:tsc": "tsc -p ./tsconfig.tests.json",
+    "prepare": "if [ -d .git ]; then git config core.hooksPath .hooks; fi",
+    "test": "./scripts/test.sh"
   },
   "dependencies": {
-    "@nearform/lyra": "^0.0.4"
+    "@nearform/lyra": "^0.0.4",
+    "html-to-text": "^8.2.1"
   },
   "devDependencies": {
+    "@types/html-to-text": "^8.1.0",
     "@types/node": "^18.7.3",
+    "astro": "^1.0.5",
     "rimraf": "^3.0.2",
     "ts-node": "^10.9.1",
     "typescript": "^4.7.4"
+  },
+  "peerDependencies": {
+    "astro": "^1.0.5"
   }
 }

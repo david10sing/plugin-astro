@@ -3,7 +3,7 @@
     /* Visit https://aka.ms/tsconfig to read more about this file */
 
     /* Projects */
-    "incremental": true,                                 /* Save .tsbuildinfo files to allow for incremental compilation of projects. */
+    "incremental": false,                                /* Save .tsbuildinfo files to allow for incremental compilation of projects. */
 
     /* Language and Environment */
     "target": "es2022",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
@@ -21,7 +21,7 @@
     "sourceMap": true,                                   /* Create source map files for emitted JavaScript files. */
 
     /* Interop Constraints */
-    "isolatedModules": true,                             /* Ensure that each file can be safely transpiled without relying on other imports. */
+    "isolatedModules": false,                            /* Ensure that each file can be safely transpiled without relying on other imports. */
     "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
     "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
 

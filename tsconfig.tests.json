@@ -4,6 +4,8 @@
     "./src/**/*"
   ],
   "compilerOptions": {
+    "esModuleInterop": true,
+    "module": "CommonJS",
     "noEmit": true
   }
 }
