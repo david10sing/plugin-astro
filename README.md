@@ -11,13 +11,13 @@ import lyra from '@nearform/lyra-astro'
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [
-		lyra({
-			mydb: {
-				pathMatcher: /blog\/[0-9]{4}\/[0-9]{2}\/[0-9]{2}\/.+$/,
-			},
-		}),
-	],
+  integrations: [
+    lyra({
+      mydb: {
+        pathMatcher: /blog\/[0-9]{4}\/[0-9]{2}\/[0-9]{2}\/.+$/,
+      },
+    }),
+  ],
 });
 ```
 
