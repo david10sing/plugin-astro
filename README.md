@@ -13,6 +13,7 @@ import lyra from '@nearform/lyra-astro'
 export default defineConfig({
   integrations: [
     lyra({
+      // We can generate more than one DB, with different configurations
       mydb: {
         // Required. Only pages matching this path regex will be indexed
         pathMatcher: /blog\/[0-9]{4}\/[0-9]{2}\/[0-9]{2}\/.+$/,
@@ -20,7 +21,8 @@ export default defineConfig({
         // Optional. 'english' by default
         language: 'spanish',
 
-        // Optional. ['body'] by default. Use it to constraint what is used to index a page.
+        // Optional. ['body'] by default. Use it to constraint what is used to
+        // index a page.
         contentSelectors: ['h1', 'main'],
       },
     }),
