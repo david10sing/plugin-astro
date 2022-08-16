@@ -1,5 +1,5 @@
 {
-  "name": "@nearform/lyra-astro",
+  "name": "@lyrasearch/plugin-astro",
   "description": "An Astro integration for Lyra",
   "version": "0.0.1",
   "keywords": [

@@ -1,13 +1,13 @@
-# Lyra-Astro
+# Lyra's Astro Plugin
 
-Lyra-Astro is a [Lyra](https://lyrajs.io) integration for
+This package is a [Lyra](https://lyrajs.io) integration for
 [Astro](https://astro.build).
 
 ## Usage
 
 ```typescript
 // In `astro.config.mjs`
-import lyra from '@nearform/lyra-astro'
+import lyra from '@lyrasearch/plugin-astro'
 
 // https://astro.build/config
 export default defineConfig({
