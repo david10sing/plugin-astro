@@ -1,6 +1,6 @@
 # Lyra's Astro Plugin
 
-This package is a [Lyra](https://lyrajs.io) integration for
+This package is a (still experimental) [Lyra](https://lyrajs.io) integration for
 [Astro](https://astro.build).
 
 ## Usage
@@ -33,13 +33,3 @@ export default defineConfig({
 When running the `astro build` command, a new DB file will be persisted in the
 `dist/assets` directory. For the particular case of this example, it will be
 saved in the file `dist/assets/lyraDB_mydb.json`.
-
-## TODO
-
-- Exposing an in-memory DB via some global registry/getter, so pages, layouts
-  and other components can use it.
-- Support other storage formats other than JSON for persisted DBs, to decrease
-  bandwidth usage.
-- Paralellize some indexing & persistence operations, to decrease its associated
-  wall-time overhead.
-
