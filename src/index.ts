@@ -29,7 +29,7 @@ export type LyraOptions = Partial<InsertConfig> & {
 	searchOptions?: Omit<SearchParams<PageIndexSchema>, "term"> | undefined;
 };
 
-const PKG_NAME = "@nearform/lyra-astro";
+const PKG_NAME = "@lyrasearch/plugin-astro";
 
 const createPlugin = (
 	options: Record<string, LyraOptions>
