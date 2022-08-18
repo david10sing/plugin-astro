@@ -52,7 +52,7 @@ To use the generated DBs in your pages, you can include a script in your
     // operation, so we must either await, or rely on `.then` calls.
     const db = await getLyraDB('mydb')
 
-    // Now we can search inside our DB. Of couse, feel free to use it in more
+    // Now we can search inside our DB. Of course, feel free to use it in more
     // interesting ways.
     console.log('Search Results')
     console.log(search(db, { term: 'mySearchTerm' }))
