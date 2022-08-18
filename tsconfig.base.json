@@ -15,7 +15,7 @@
     "checkJs": true,                                     /* Enable error reporting in type-checked JavaScript files. */
 
     /* Emit */
-		"baseUrl": "./src",                                  /* Base directory to resolve non-absolute module names. */
+    "baseUrl": "./src",                                  /* Base directory to resolve non-absolute module names. */
     "declaration": true,                                 /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
     "declarationMap": true,                              /* Create sourcemaps for d.ts files. */
     "sourceMap": true,                                   /* Create source map files for emitted JavaScript files. */

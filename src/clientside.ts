@@ -11,7 +11,7 @@ export const getLyraDB = async (
 		return dbs[dbName]!;
 	}
 
-	const db = createLyraDB({ schema: { _: "string" } });
+	const db = createLyraDB({ schema: { _: "string" }, edge: true });
 
 	const dbResponse = await fetch(`/assets/lyraDB_${dbName}.json`);
 	const dbData = await dbResponse.json();
@@ -21,3 +21,5 @@ export const getLyraDB = async (
 
 	return db;
 };
+
+export { search } from "@nearform/lyra";

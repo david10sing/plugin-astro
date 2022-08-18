@@ -21,9 +21,16 @@
   "module": "./dist/esm/index.mjs",
   "types": "./dist/esm/index.d.ts",
   "exports": {
-    "import": "./dist/esm/index.mjs",
-    "require": "./dist/cjs/index.cjs",
-    "node": "./dist/cjs/index.cjs"
+    ".": {
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.cjs",
+      "node": "./dist/cjs/index.cjs"
+    },
+    "./clientside": {
+      "import": "./dist/esm/clientside.mjs",
+      "require": "./dist/cjs/clientside.cjs",
+      "node": "./dist/cjs/clientside.cjs"
+    }
   },
   "scripts": {
     "build": "rimraf ./dist && yarn build:cjs && yarn build:esm",
