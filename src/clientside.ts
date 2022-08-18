@@ -1,25 +1,26 @@
-import type { Lyra, PropertiesSchema } from "@nearform/lyra";
-import { create as createLyraDB, load as loadLyraDB } from "@nearform/lyra";
+import type { Data, Lyra, PropertiesSchema } from '@nearform/lyra'
+import { create as createLyraDB, load as loadLyraDB } from '@nearform/lyra'
 
 // "global/shared" registry
-const dbs: Record<string, Lyra<PropertiesSchema>> = {};
+const dbs: Record<string, Lyra<PropertiesSchema>> = {}
 
 export const getLyraDB = async (
-	dbName: string
+	dbName: string,
 ): Promise<Lyra<PropertiesSchema>> => {
 	if (dbName in dbs) {
-		return dbs[dbName]!;
+		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+		return dbs[dbName]!
 	}
 
-	const db = createLyraDB({ schema: { _: "string" }, edge: true });
+	const db = createLyraDB({ schema: { _: 'string' }, edge: true })
 
-	const dbResponse = await fetch(`/assets/lyraDB_${dbName}.json`);
-	const dbData = await dbResponse.json();
+	const dbResponse = await fetch(`/assets/lyraDB_${dbName}.json`)
+	const dbData = await dbResponse.json() as Data<{ _: 'string' }>
 
-	loadLyraDB(db, dbData);
-	dbs[dbName] = db;
+	loadLyraDB(db, dbData)
+	dbs[dbName] = db
 
-	return db;
-};
+	return db
+}
 
-export { search } from "@nearform/lyra";
+export { search } from '@nearform/lyra'
