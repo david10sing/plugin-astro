@@ -12,6 +12,7 @@ for i in $( ls ./dist/esm/*.js.map ); do
 	# Fix map references inside source files
 	sed -Ei 's/\/\/# sourceMappingURL=(.+)\.js\.map/\/\/# sourceMappingURL=\1.mjs.map/g' "${ii%.*}.mjs";
 
-	# Fix imports in ESM files
+	# Fix imports in ESM files (we first remove existing extensions)
+	sed -Ei 's/\s+from\s+"\.\/(.+)\.m?js";/ from ".\/\1";/g' "${ii%.*}.mjs";
 	sed -Ei 's/\s+from\s+"\.\/(.+)";/ from ".\/\1.mjs";/g' "${ii%.*}.mjs";
 done

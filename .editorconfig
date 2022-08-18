@@ -10,3 +10,6 @@ trim_trailing_whitespace = true
 
 [*.md]
 indent_style = space
+
+[*.json]
+indent_style = space
