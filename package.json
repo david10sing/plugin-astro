@@ -1,7 +1,7 @@
 {
   "name": "@lyrasearch/plugin-astro",
   "description": "An Astro integration for Lyra",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.0",
   "keywords": [
     "astro",
     "astro-component",
@@ -36,6 +36,7 @@
     "build": "rimraf ./dist && yarn build:cjs && yarn build:esm",
     "build:cjs": "./scripts/build_cjs.sh",
     "build:esm": "./scripts/build_esm.sh",
+    "changelog": "auto-changelog -p",
     "lint": "yarn lint:tsc && yarn lint:eslint",
     "lint:eslint": "yarn eslint . --ext .js,.ts --max-warnings 0",
     "lint:tsc": "tsc -p ./tsconfig.tests.json",
@@ -55,6 +56,7 @@
     "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",
     "astro": "^1.0.6",
+    "auto-changelog": "^2.4.0",
     "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-node": "^11.1.0",
