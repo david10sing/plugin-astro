@@ -9,7 +9,7 @@
     "lyra",
     "search"
   ],
-  "repository": "git@github.com:nearform/lyra-astro.git",
+  "repository": "https://github.com/LyraSearch/plugin-astro",
   "author": {
     "name": "Andres Correa Casablanca",
     "email": "andres.casablanca@nearform.com",
