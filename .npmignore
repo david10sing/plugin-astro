@@ -1,7 +1,12 @@
 .hooks/
 node_modules/
 src/
+scripts/
 .editorconfig
+.eslintignore
+.eslintrc.js
+.gitignore
+.node-version
 .npmignore
 tsconfig.base.json
 tsconfig.cjs.json
