@@ -5,12 +5,12 @@ import type {
 	Lyra,
 	PropertiesSchema,
 	SearchParams,
-} from '@nearform/lyra'
+} from '@lyrasearch/lyra'
 import {
 	create as createLyraDB,
 	insert as insertIntoLyraDB,
 	save as saveLyraDB,
-} from '@nearform/lyra'
+} from '@lyrasearch/lyra'
 import { readFileSync, writeFileSync } from 'node:fs'
 import { compile } from 'html-to-text'
 import { join as joinPath } from 'node:path'
