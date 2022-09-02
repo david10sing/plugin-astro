@@ -11,7 +11,7 @@ import {
 	insert as insertIntoLyraDB,
 	save as saveLyraDB,
 } from '@lyrasearch/lyra'
-import { readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { compile } from 'html-to-text'
 import { join as joinPath } from 'node:path'
 
@@ -103,11 +103,16 @@ export const createPlugin = (
 				config = cfg
 			},
 			'astro:build:done': ({ pages, routes }) => {
+				const assetsDir = joinPath(config.outDir.pathname, 'assets')
+				if (!existsSync(assetsDir)) {
+					mkdirSync(assetsDir)
+				}
+
 				for (const [dbName, dbConfig] of Object.entries(options)) {
 					const namedDb = prepareLyraDb(dbConfig, pages, routes)
 
 					writeFileSync(
-						joinPath(config.outDir.pathname, 'assets', `lyraDB_${dbName}.json`),
+						joinPath(assetsDir, `lyraDB_${dbName}.json`),
 						JSON.stringify(saveLyraDB(namedDb)),
 						{ encoding: 'utf8' },
 					)
