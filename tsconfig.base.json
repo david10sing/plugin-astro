@@ -6,10 +6,10 @@
     "incremental": false,                                /* Save .tsbuildinfo files to allow for incremental compilation of projects. */
 
     /* Language and Environment */
-    "target": "es2022",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "target": "ES2022",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
 
     /* Modules */
-    "module": "commonjs",                                /* Specify what module code is generated. */
+    "module": "CommonJS",                                /* Specify what module code is generated. */
 
     /* JavaScript Support */
     "checkJs": true,                                     /* Enable error reporting in type-checked JavaScript files. */
