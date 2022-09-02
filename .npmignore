@@ -1,5 +1,6 @@
 .github/
 .hooks/
+artifacts/
 node_modules/
 src/
 scripts/
@@ -9,6 +10,7 @@ scripts/
 .gitignore
 .node-version
 .npmignore
+pnpm-lock.yaml
 tsconfig.base.json
 tsconfig.cjs.json
 tsconfig.cjs.tsbuildinfo
