@@ -53,12 +53,17 @@ const prepareLyraDb = (
 		},
 	})
 
+	// pathname is usually of the form `some/path/`, while `r.route` usually takes
+	// the form `/some/path`. That's why we strip start & end slashes to compare.
 	const pathsToBeIndexed = pages
 		.filter(({ pathname }) => dbConfig.pathMatcher.test(pathname))
 		.map(({ pathname }) => ({
 			pathname,
-			generatedFilePath: routes.filter((r) => r.route === `/${pathname}`)[0]
-				?.distURL?.pathname,
+			generatedFilePath: routes.filter(
+				(r) =>
+					r.route.replace(/(^\/|\/$)/g, '') ===
+					pathname.replace(/(^\/|\/$)/g, ''),
+			)[0]?.distURL?.pathname,
 		}))
 		.filter(({ generatedFilePath }) => !!generatedFilePath) as {
 		pathname: string
