@@ -41,6 +41,7 @@
     "lint:eslint": "yarn eslint . --ext .js,.ts --max-warnings 0",
     "lint:tsc": "tsc -p ./tsconfig.tests.json",
     "prepare": "if [ -d .git ]; then git config core.hooksPath .hooks; fi",
+    "prepublishOnly": "yarn lint && yarn test",
     "test": "yarn test:unit && yarn test:integration",
     "test:integration": "./scripts/test_integration.sh",
     "test:unit": "./scripts/test_unit.sh"
