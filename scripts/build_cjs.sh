@@ -1,5 +1,13 @@
 #!/bin/sh
 
+# NOTE: In a perfect world, the kind of transformations that this script
+#       performs wouldn't be needed. In theory, it should be enough to add a
+#       couple of entries in the `package.json` file to specify which files are
+#       ESM and which ones are CJS.
+#       Sadly, for local experimentation, when using commands such as
+#       `yarn link`, NodeJS doesn't seem able to distinguish between ESM & CJS
+#       if we don't use their specific file extensions.
+
 set -e;
 
 # Compile
