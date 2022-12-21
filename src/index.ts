@@ -68,10 +68,13 @@ const prepareLyraDb = (
 			pathname,
 			generatedFilePath: routes.filter(
 				(r) => {
-					const route = r.route.replace(/(^\/|\/$)/g, ''), pathName = pathname.replace(/(^\/|\/$)/g, '')
+					const route = r.route.replace(/(^\/|\/$)/g, '')
+					const pathName = pathname.replace(/(^\/|\/$)/g, '')
+
 					if (dbConfig.caseSensitive) {
 						return route.toLowerCase() === pathName.toLowerCase()
 					}
+
 					return route === pathName
 				}
 			)[0]?.distURL?.pathname,
