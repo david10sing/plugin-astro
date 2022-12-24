@@ -25,6 +25,13 @@ export const defaultSchema: PropertiesSchema = {
 export type PageIndexSchema = typeof defaultSchema
 
 export type LyraOptions = Partial<InsertConfig> & {
+	/**
+	 * Controls whether generatedFilePath is filter
+	 * using case sensitive or case insensitive comparison
+	 * @default false
+	 *
+	 */
+	caseSensitive?: boolean
 	pathMatcher: RegExp
 	contentSelectors?: string[]
 	searchOptions?: Omit<SearchParams<PageIndexSchema>, 'term'> | undefined
@@ -60,9 +67,16 @@ const prepareLyraDb = (
 		.map(({ pathname }) => ({
 			pathname,
 			generatedFilePath: routes.filter(
-				(r) =>
-					r.route.replace(/(^\/|\/$)/g, '') ===
-					pathname.replace(/(^\/|\/$)/g, ''),
+				(r) => {
+					const route = r.route.replace(/(^\/|\/$)/g, '')
+					const pathName = pathname.replace(/(^\/|\/$)/g, '')
+
+					if (dbConfig.caseSensitive) {
+						return route.toLowerCase() === pathName.toLowerCase()
+					}
+
+					return route === pathName
+				}
 			)[0]?.distURL?.pathname,
 		}))
 		.filter(({ generatedFilePath }) => !!generatedFilePath) as {
