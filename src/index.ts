@@ -67,7 +67,7 @@ const prepareLyraDb = (
 		.filter(({ pathname }) => dbConfig.pathMatcher.test(pathname))
 		.map(({ pathname }) => ({
 			pathname,
-			generatedFile: routes.filter((r) => {
+			generatedFileUrl: routes.filter((r) => {
 				const route = r.route.replace(/(^\/|\/$)/g, '')
 				const pathName = pathname.replace(/(^\/|\/$)/g, '')
 
@@ -78,9 +78,9 @@ const prepareLyraDb = (
 				return route === pathName
 			})[0]?.distURL,
 		}))
-		.filter(({ generatedFile }) => !!generatedFile) as {
+		.filter(({ generatedFileUrl }) => !!generatedFileUrl) as {
 		pathname: string
-		generatedFile: Exclude<RouteData['distURL'], undefined>
+		generatedFileUrl: Exclude<RouteData['distURL'], undefined>
 	}[]
 
 	const lyraDB = createLyraDB({
@@ -88,8 +88,8 @@ const prepareLyraDb = (
 		...(dbConfig.language ? { defaultLanguage: dbConfig.language } : undefined),
 	})
 
-	for (const { pathname, generatedFile } of pathsToBeIndexed) {
-		const htmlContent = readFileSync(fileURLToPath(generatedFile), {
+	for (const { pathname, generatedFileUrl } of pathsToBeIndexed) {
+		const htmlContent = readFileSync(fileURLToPath(generatedFileUrl), {
 			encoding: 'utf8',
 		})
 
