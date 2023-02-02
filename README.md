@@ -25,11 +25,11 @@ export default defineConfig({
 
         // Optional. ['body'] by default. Use it to constraint what is used to
         // index a page.
-        contentSelectors: ['h1', 'main'],
-      },
-    }),
-  ],
-});
+        contentSelectors: ['h1', 'main']
+      }
+    })
+  ]
+})
 ```
 
 When running the `astro build` command, a new DB file will be persisted in the
@@ -46,7 +46,7 @@ To use the generated DBs in your pages, you can include a script in your
   <!-- Other stuff -->
   <script>
     // Astro will do the job of bundling everything for you
-    import { getLyraDB, search } from "@lyrasearch/plugin-astro/clientside"
+    import { getLyraDB, search } from "@lyrasearch/plugin-astro/client"
 
     // We load the DB that we generated at build time, this is an asynchronous
     // operation, so we must either await, or rely on `.then` calls.
@@ -61,4 +61,4 @@ To use the generated DBs in your pages, you can include a script in your
 ```
 
 **NOTE:** For now, this plugin only supports readonly DBs. This might change in
-          the future if there's demand for it.
+the future if there's demand for it.
