@@ -38,6 +38,7 @@
     "build": "swc --delete-dir-on-start --extensions .ts -d dist src",
     "postbuild": "tsc -p . --emitDeclarationOnly",
     "test": "node --loader=tsx --no-warnings=loader --test ./test/integration.ts | tap-mocha-reporter spec",
+    "posttest": "rm -f test/sandbox/src/env.d.ts",
     "format": "prettier -w src test",
     "lint": "eslint src test --ext .ts",
     "changelog": "auto-changelog -p",
