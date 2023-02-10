@@ -2,5 +2,7 @@ dist/
 node_modules/
 test/sandbox/dist
 test/sandbox/node_modules
+test/sandbox/*-lock.json
+test/sandbox/yarn.lock
 pnpm-lock.yaml
 yarn.lock
